@@ -12,6 +12,7 @@ Docker image for my Gitlab CI jobs.
 - docker client
 - ssh client, sshpass
 - curl, wget
+- mcli (Minio client)
 
 
 ## Build

@@ -13,3 +13,7 @@ RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${
   && mv docker/docker /usr/local/bin \
   && rm -r docker docker.tgz
 
+# Minio CLient (mc -> mcli)
+RUN wget https://dl.minio.io/client/mc/release/linux-amd64/mc && \
+    mv mc /usr/local/bin/mcli && \
+    chmod +x /usr/local/bin/mcli
