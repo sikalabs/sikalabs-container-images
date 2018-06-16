@@ -1,0 +1,12 @@
+variables:
+    IMAGE: ondrejsika/ci
+
+stages:
+    - build
+
+build:
+    stage: build
+    script:
+        - docker build -t $IMAGE .
+        - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+        - docker push $IMAGE
