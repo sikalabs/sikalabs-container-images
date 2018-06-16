@@ -5,7 +5,7 @@ RUN apt update && apt install -y \
     curl \
     wget \
     git
-RUN echo "alias ssh='sshpass -e ssh -o StrictHostKeyChecking=no '" >> /etc/bash.bashrc
+COPY sshx /usr/local/bin/
 ENV DOCKERVERSION=17.12.0-ce
 RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKERVERSION}.tgz \
   && mv docker-${DOCKERVERSION}.tgz docker.tgz \
