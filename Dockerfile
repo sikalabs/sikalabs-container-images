@@ -4,6 +4,7 @@ RUN apt update && apt install -y \
     openssh-client sshpass \
     curl \
     wget \
+    jq \
     git
 COPY sshx /usr/local/bin/
 ENV DOCKERVERSION=17.12.0-ce
