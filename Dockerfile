@@ -22,3 +22,6 @@ RUN base=https://github.com/docker/machine/releases/download/v0.14.0 && \
 RUN wget https://dl.minio.io/client/mc/release/linux-amd64/mc && \
     mv mc /usr/local/bin/mcli && \
     chmod +x /usr/local/bin/mcli
+
+# kubectl
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin

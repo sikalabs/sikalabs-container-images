@@ -14,6 +14,7 @@ Docker image for my Gitlab CI jobs.
 - sshx (alias for `sshpass -e ssh -o StrictHostKeyChecking=no $@`)
 - curl, wget
 - mcli (Minio client)
+- kubectl
 
 
 ## Build
