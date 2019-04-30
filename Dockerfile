@@ -2,6 +2,7 @@ FROM debian:9
 MAINTAINER Ondrej Sika <ondrej@ondrejsika.com>
 RUN apt update && apt install -y \
     openssh-client sshpass \
+    zip unzip \
     curl \
     wget \
     jq \
