@@ -42,3 +42,17 @@ RUN curl -fsSL https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/terra
   && unzip terraform.zip \
   && mv terraform /usr/local/bin \
   && rm -r terraform.zip
+
+# consul
+ENV CONSUL_VERSION=1.5.3
+RUN curl -fsSL https://releases.hashicorp.com/consul/$CONSUL_VERSION/consul_${CONSUL_VERSION}_linux_amd64.zip -o consul.zip \
+  && unzip consul.zip \
+  && mv consul /usr/local/bin \
+  && rm -r consul.zip
+
+# vault
+ENV VAULT_VERSION=1.2.1
+RUN curl -fsSL https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip -o vault.zip \
+  && unzip vault.zip \
+  && mv vault /usr/local/bin \
+  && rm -r vault.zip
