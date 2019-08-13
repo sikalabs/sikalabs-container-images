@@ -22,7 +22,7 @@ Docker image for my Gitlab CI jobs.
 ## Build
 
 ```
-docker build -t ondrejsika/ci .
+DOCKER_BUILDKIT=1 docker build -t ondrejsika/ci .
 ```
 
 ## Publish
