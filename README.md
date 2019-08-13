@@ -9,13 +9,14 @@ Docker image for my Gitlab CI jobs.
 ## Toolchain
 
 - git
-- docker client
+- docker client, docker compose, docker machine
 - ssh client, sshpass
 - sshx (alias for `sshpass -e ssh -o StrictHostKeyChecking=no $@`)
 - curl, wget
 - zip, unzip
 - mcli (Minio client)
 - kubectl, helm
+- terraform, consul, vault
 
 
 ## Build
