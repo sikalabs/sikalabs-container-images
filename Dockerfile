@@ -35,3 +35,10 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s
 
 # helm
 RUN curl https://raw.githubusercontent.com/helm/helm/master/scripts/get | bash
+
+# terraform
+ENV TERRAFORM_VERSION=0.12.6
+RUN curl -fsSL https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -o terraform.zip \
+  && unzip terraform.zip \
+  && mv terraform /usr/local/bin \
+  && rm -r terraform.zip
