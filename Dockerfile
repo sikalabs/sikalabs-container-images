@@ -1,12 +1,15 @@
-FROM debian:9 as base
+FROM debian:buster-slim as base
 
-RUN apt update && apt install -y \
-    openssh-client sshpass \
-    zip unzip \
-    curl \
-    wget \
-    jq \
-    git
+RUN apt update && \
+    apt install -y \
+      ca-certificates \
+      openssh-client sshpass \
+      zip unzip \
+      curl \
+      wget \
+      jq \
+      git && \
+    update-ca-certificates
 
 COPY sshx /usr/local/bin/
 
