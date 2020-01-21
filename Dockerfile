@@ -76,6 +76,11 @@ RUN curl -fsSL https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAU
   && mv vault /usr/local/bin \
   && rm -r vault.zip
 
+# doctl
+FROM base as doctl
+ENV DOCTL_VERSION=1.37.0
+RUN curl -L https://github.com/digitalocean/doctl/releases/download/v${DOCTL_VERSION}/doctl-${DOCTL_VERSION}-linux-amd64.tar.gz | tar xz && \
+  mv doctl /usr/local/bin
 
 # Final Image
 FROM base
@@ -88,3 +93,4 @@ COPY --from=helm /usr/local/bin/helm /usr/local/bin
 COPY --from=terraform /usr/local/bin/terraform /usr/local/bin
 COPY --from=consul /usr/local/bin/consul /usr/local/bin
 COPY --from=vault /usr/local/bin/vault /usr/local/bin
+COPY --from=doctl /usr/local/bin/doctl /usr/local/bin
