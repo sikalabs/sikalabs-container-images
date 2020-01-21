@@ -46,7 +46,11 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s
 
 # helm
 FROM base as helm
-RUN curl https://raw.githubusercontent.com/helm/helm/master/scripts/get | bash
+ENV HELM_VERSION=v3.0.2
+RUN curl -fsSL https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz -o helm.tar.gz \
+  && tar xzvf helm.tar.gz \
+  && mv linux-amd64/helm /usr/local/bin \
+  && rm -r linux-amd64 helm.tar.gz
 
 # terraform
 FROM base as terraform
