@@ -1,7 +1,7 @@
 FROM debian:buster-slim as base
 
-RUN apt update && \
-    apt install -y \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
       ca-certificates \
       openssh-client sshpass \
       zip unzip \
@@ -9,6 +9,7 @@ RUN apt update && \
       wget \
       jq \
       git && \
+    rm -rf /var/lib/apt/lists/* && \
     update-ca-certificates
 
 COPY sshx /usr/local/bin/
