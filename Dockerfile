@@ -16,7 +16,7 @@ COPY sshx /usr/local/bin/
 
 # Docker
 FROM base as docker
-ENV DOCKER_VERSION=19.03.1
+ENV DOCKER_VERSION=19.03.12
 RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz \
   && mv docker-${DOCKER_VERSION}.tgz docker.tgz \
   && tar xzvf docker.tgz \
@@ -25,7 +25,7 @@ RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${
 
 # Docker Compose
 FROM base as docker_compose
-ENV DOCKER_COMPOSE_VERSION=1.24.1
+ENV DOCKER_COMPOSE_VERSION=1.26.2
 RUN curl -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 
 # Docker Machine
@@ -55,7 +55,7 @@ RUN curl -fsSL https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz -o he
 
 # terraform
 FROM base as terraform
-ENV TERRAFORM_VERSION=0.12.6
+ENV TERRAFORM_VERSION=0.13.2
 RUN curl -fsSL https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -o terraform.zip \
   && unzip terraform.zip \
   && mv terraform /usr/local/bin \
@@ -63,7 +63,7 @@ RUN curl -fsSL https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/terra
 
 # consul
 FROM base as consul
-ENV CONSUL_VERSION=1.5.3
+ENV CONSUL_VERSION=1.7.2
 RUN curl -fsSL https://releases.hashicorp.com/consul/$CONSUL_VERSION/consul_${CONSUL_VERSION}_linux_amd64.zip -o consul.zip \
   && unzip consul.zip \
   && mv consul /usr/local/bin \
@@ -71,7 +71,7 @@ RUN curl -fsSL https://releases.hashicorp.com/consul/$CONSUL_VERSION/consul_${CO
 
 # vault
 FROM base as vault
-ENV VAULT_VERSION=1.2.1
+ENV VAULT_VERSION=1.5.3
 RUN curl -fsSL https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip -o vault.zip \
   && unzip vault.zip \
   && mv vault /usr/local/bin \
