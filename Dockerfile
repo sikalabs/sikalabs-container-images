@@ -32,14 +32,14 @@ RUN curl -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_
 FROM base as docker_machine
 ENV DOCKER_MACHINE_VERSION=v0.16.1
 RUN base=https://github.com/docker/machine/releases/download/$DOCKER_MACHINE_VERSION && \
-    curl -L $base/docker-machine-$(uname -s)-$(uname -m) > /tmp/docker-machine && \
-    install /tmp/docker-machine /usr/local/bin/docker-machine
+  curl -L $base/docker-machine-$(uname -s)-$(uname -m) > /tmp/docker-machine && \
+  install /tmp/docker-machine /usr/local/bin/docker-machine
 
 # Minio Client (mc -> mcli)
 FROM base as minio
 RUN wget https://dl.minio.io/client/mc/release/linux-amd64/mc && \
-    mv mc /usr/local/bin/mcli && \
-    chmod +x /usr/local/bin/mcli
+  mv mc /usr/local/bin/mcli && \
+  chmod +x /usr/local/bin/mcli
 
 # kubectl
 FROM base as kubectl
