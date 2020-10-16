@@ -8,6 +8,7 @@ RUN apt-get update && \
   curl \
   wget \
   jq \
+  make \
   git && \
   rm -rf /var/lib/apt/lists/* && \
   update-ca-certificates
