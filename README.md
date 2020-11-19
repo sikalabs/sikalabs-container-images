@@ -5,7 +5,6 @@
 
 Docker image for my Gitlab CI jobs.
 
-
 ## Toolchain
 
 - git
@@ -18,7 +17,6 @@ Docker image for my Gitlab CI jobs.
 - kubectl, helm
 - terraform, consul, vault
 
-
 ## Build
 
 ```
@@ -30,4 +28,3 @@ DOCKER_BUILDKIT=1 docker build -t ondrejsika/ci .
 ```
 docker push ondrejsika/ci
 ```
-
