@@ -1,7 +1,7 @@
-# ondrejsika/ci
+# sikalabs/ci image
 
     Ondrej Sika <ondrej@ondrejsika.com>
-    https://github.com/ondrejsika/ondrejsika-ci-docker
+    https://github.com/sikalabs/sikalabs-ci-image
 
 Docker image for my Gitlab CI jobs.
 
