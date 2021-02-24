@@ -1,7 +1,7 @@
 all: build push
 
 build:
-	docker build -t ondrejsika/ci .
+	docker build -t sikalabs/ci .
 
 push:
-	docker push ondrejsika/ci
+	docker push sikalabs/ci
