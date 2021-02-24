@@ -20,12 +20,16 @@ Docker image for my Gitlab CI jobs.
 
 ## Build
 
+Build `sikalabs/ci`
+
 ```
-DOCKER_BUILDKIT=1 docker build -t ondrejsika/ci .
+make build
 ```
 
 ## Publish
 
+Push `sikalabs/ci` and alias (`ondrejsika/ci`)
+
 ```
-docker push ondrejsika/ci
+make push
 ```
