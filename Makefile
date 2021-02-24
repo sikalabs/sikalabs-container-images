@@ -5,3 +5,5 @@ build:
 
 push:
 	docker push sikalabs/ci
+	docker tag sikalabs/ci ondrejsika/ci
+	docker push ondrejsika/ci
