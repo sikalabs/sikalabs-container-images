@@ -1,3 +1,5 @@
+[**SikaLabs**](https://sikalabs.com) | <opensource@sikalabs.com>
+
 # sikalabs/ci image
 
     Ondrej Sika <ondrej@ondrejsika.com>
