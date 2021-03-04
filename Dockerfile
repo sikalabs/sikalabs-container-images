@@ -86,6 +86,11 @@ ENV DOCTL_VERSION=1.37.0
 RUN curl -L https://github.com/digitalocean/doctl/releases/download/v${DOCTL_VERSION}/doctl-${DOCTL_VERSION}-linux-amd64.tar.gz | tar xz && \
   mv doctl /usr/local/bin
 
+# skaffold
+FROM base as skaffold
+RUN curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \
+  sudo install skaffold /usr/local/bin/
+
 # Final Image
 FROM base
 COPY --from=docker /usr/local/bin/docker /usr/local/bin
@@ -98,3 +103,4 @@ COPY --from=terraform /usr/local/bin/terraform /usr/local/bin
 COPY --from=consul /usr/local/bin/consul /usr/local/bin
 COPY --from=vault /usr/local/bin/vault /usr/local/bin
 COPY --from=doctl /usr/local/bin/doctl /usr/local/bin
+COPY --from=skaffold /usr/local/bin/skaffold /usr/local/bin
