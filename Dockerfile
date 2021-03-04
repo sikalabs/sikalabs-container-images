@@ -7,6 +7,7 @@ RUN apt-get update && \
   zip unzip \
   curl \
   wget \
+  host \
   jq \
   make \
   sudo \
