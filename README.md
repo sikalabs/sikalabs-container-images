@@ -10,3 +10,4 @@
 ## Images
 
 - [sikalabs/ci](./ci)
+- [sikalabs/kubectl](./kubectl)
