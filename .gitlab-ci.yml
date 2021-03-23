@@ -1,8 +1,0 @@
-stages:
-    - build
-
-build:
-    stage: build
-    script:
-        - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-        - make all
