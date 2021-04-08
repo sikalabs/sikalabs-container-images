@@ -11,3 +11,4 @@
 
 - [sikalabs/ci](./ci)
 - [sikalabs/kubectl](./kubectl)
+- [sikalabs/pause](./pause)
