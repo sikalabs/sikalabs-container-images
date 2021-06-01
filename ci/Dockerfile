@@ -11,6 +11,7 @@ RUN apt-get update && \
   jq \
   make \
   sudo \
+  moreutils \
   git && \
   rm -rf /var/lib/apt/lists/* && \
   update-ca-certificates

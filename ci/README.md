@@ -14,6 +14,7 @@ Docker image for my Gitlab CI jobs.
 - mcli (Minio client)
 - kubectl, helm
 - terraform, consul, vault
+- moreutils (ts)
 
 ## Build
 
