@@ -12,3 +12,4 @@
 - [sikalabs/ci](./ci)
 - [sikalabs/kubectl](./kubectl)
 - [sikalabs/pause](./pause)
+- [sikalabs/nginx-public](./nginx-public)
