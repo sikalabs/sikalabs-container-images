@@ -32,13 +32,6 @@ FROM base as docker_compose
 ENV DOCKER_COMPOSE_VERSION=1.26.2
 RUN curl -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 
-# Docker Machine
-FROM base as docker_machine
-ENV DOCKER_MACHINE_VERSION=v0.16.1
-RUN base=https://github.com/docker/machine/releases/download/$DOCKER_MACHINE_VERSION && \
-  curl -L $base/docker-machine-$(uname -s)-$(uname -m) > /tmp/docker-machine && \
-  install /tmp/docker-machine /usr/local/bin/docker-machine
-
 # Minio Client (mc -> mcli)
 FROM base as minio
 RUN wget https://dl.minio.io/client/mc/release/linux-amd64/mc && \
@@ -96,7 +89,6 @@ RUN curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/sk
 FROM base
 COPY --from=docker /usr/local/bin/docker /usr/local/bin
 COPY --from=docker_compose /usr/local/bin/docker-compose /usr/local/bin
-COPY --from=docker_machine /usr/local/bin/docker-machine /usr/local/bin
 COPY --from=minio /usr/local/bin/mcli /usr/local/bin
 COPY --from=kubectl /usr/local/bin/kubectl /usr/local/bin
 COPY --from=helm /usr/local/bin/helm /usr/local/bin
