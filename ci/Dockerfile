@@ -12,7 +12,9 @@ RUN apt-get update && \
   make \
   sudo \
   moreutils \
-  git && \
+  git \
+  # required by aws cli
+  less groff && \
   rm -rf /var/lib/apt/lists/* && \
   update-ca-certificates
 
@@ -87,6 +89,11 @@ RUN curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/sk
 
 # Final Image
 FROM base
+# Install aws cli v2
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip" -o "awscliv2.zip" && \
+  unzip awscliv2.zip && \
+  ./aws/install && \
+  rm -rf awscliv2.zip aws
 COPY --from=docker /usr/local/bin/docker /usr/local/bin
 COPY --from=docker_compose /usr/local/bin/docker-compose /usr/local/bin
 COPY --from=minio /usr/local/bin/mcli /usr/local/bin
