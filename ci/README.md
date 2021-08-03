@@ -4,6 +4,7 @@ Docker image for my Gitlab CI jobs.
 
 ## Toolchain
 
+- [slut](https://github.com/sikalabs/slut) (SikaLabs UTils)
 - git
 - docker client, docker compose, docker machine
 - ssh client, sshpass
