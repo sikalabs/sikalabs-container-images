@@ -87,12 +87,12 @@ FROM base as skaffold
 RUN curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \
   sudo install skaffold /usr/local/bin/
 
-# slut (SikaLabs UTils)
-FROM base as slut
-ENV SLUT_VERSION=v0.5.0
-RUN wget https://github.com/sikalabs/slut/releases/download/${SLUT_VERSION}/slut_${SLUT_VERSION}_linux_amd64.tar.gz && \
-  tar -xvzf slut_${SLUT_VERSION}_linux_amd64.tar.gz && \
-  mv slut /usr/local/bin/
+# slu (SikaLabs Utils)
+FROM base as slu
+ENV slu_VERSION=v0.5.0
+RUN wget https://github.com/sikalabs/slu/releases/download/${slu_VERSION}/slu_${slu_VERSION}_linux_amd64.tar.gz && \
+  tar -xvzf slu_${slu_VERSION}_linux_amd64.tar.gz && \
+  mv slu /usr/local/bin/
 
 # Final Image
 FROM base
@@ -111,4 +111,4 @@ COPY --from=consul /usr/local/bin/consul /usr/local/bin
 COPY --from=vault /usr/local/bin/vault /usr/local/bin
 COPY --from=doctl /usr/local/bin/doctl /usr/local/bin
 COPY --from=skaffold /usr/local/bin/skaffold /usr/local/bin
-COPY --from=slut /usr/local/bin/slut /usr/local/bin
+COPY --from=slu /usr/local/bin/slu /usr/local/bin
