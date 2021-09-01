@@ -14,3 +14,7 @@
 - [sikalabs/pause](./pause)
 - [sikalabs/nginx-public](./nginx-public)
 - [sikalabs/debug-server](./debug-server)
+
+### Extra Images for Internal Usage
+
+- [sikalabs/extra:node-with-statica](./extra/node-with-statica)
