@@ -18,3 +18,4 @@
 ### Extra Images for Internal Usage
 
 - [sikalabs/extra:node-with-statica](./extra/node-with-statica)
+- [sikalabs/extra:deckschrubber](./extra/deckschrubber)
