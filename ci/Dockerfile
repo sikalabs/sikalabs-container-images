@@ -46,7 +46,7 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s
 
 # helm
 FROM base as helm
-ENV HELM_VERSION=v3.0.2
+ENV HELM_VERSION=v3.7.1
 RUN curl -fsSL https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz -o helm.tar.gz \
   && tar xzvf helm.tar.gz \
   && mv linux-amd64/helm /usr/local/bin \
