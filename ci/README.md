@@ -16,6 +16,7 @@ Docker image for my Gitlab CI jobs.
 - kubectl, helm
 - terraform, consul, vault
 - moreutils (ts)
+- statica
 
 ## Build
 
