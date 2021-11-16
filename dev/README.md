@@ -6,6 +6,7 @@ Image with development tooling based on `sikalabs/ci`
 
 - vim
 - tree
+- telnet
 
 ## Build
 
