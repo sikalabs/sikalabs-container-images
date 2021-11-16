@@ -7,6 +7,8 @@ Image with development tooling based on `sikalabs/ci`
 - vim
 - tree
 - telnet
+- ping
+- traceroute
 
 ## Build
 
