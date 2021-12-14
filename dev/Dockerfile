@@ -5,4 +5,6 @@ RUN apt-get install -y --no-install-recommends \
   tree \
   telnet \
   iputils-ping \
-  traceroute
+  traceroute \
+  htop \
+  procps
