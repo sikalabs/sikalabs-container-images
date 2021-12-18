@@ -1,5 +1,6 @@
 TERGUM_VERSION=v0.21.0
 IMAGE=sikalabs/extra:tergum-$(TERGUM_VERSION)-with-mongodump-mysqldump
+IMAGE_GITHUB=ghcr.io/tergum-extra/tergum-with-mongodump-mysqldump:$(TERGUM_VERSION)
 
 all: build push
 
@@ -8,3 +9,7 @@ build:
 
 push:
 	docker push ${IMAGE}
+
+push-github:
+	docker tag ${IMAGE} ${IMAGE_GITHUB}
+	docker push ${IMAGE_GITHUB}
