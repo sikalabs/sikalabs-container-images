@@ -1,4 +1,4 @@
-ARG TERGUM_VERSION=v0.16.0
+ARG TERGUM_VERSION
 FROM sikalabs/tergum:$TERGUM_VERSION
 RUN apt-get update
 RUN apt-get install -y sudo wget gnupg2
