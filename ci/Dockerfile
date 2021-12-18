@@ -1,4 +1,4 @@
-FROM debian:buster-slim as base
+FROM debian:11-slim as base
 
 RUN apt-get update && \
   apt-get install -y --no-install-recommends \
