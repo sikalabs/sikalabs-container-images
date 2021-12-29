@@ -1,4 +1,5 @@
-FROM debian:11-slim as base
+ARG BASE_IMAGE=debian:11-slim
+FROM $BASE_IMAGE as base
 
 RUN apt-get update && \
   apt-get install -y --no-install-recommends \
