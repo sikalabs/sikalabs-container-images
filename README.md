@@ -17,5 +17,6 @@
 
 ### Extra Images for Internal Usage
 
+- [sikalabs/extra:node-with-slu](./extra/node-with-slu)
 - [sikalabs/extra:node-with-statica](./extra/node-with-statica)
 - [sikalabs/extra:deckschrubber](./extra/deckschrubber)
