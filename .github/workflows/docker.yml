@@ -17,6 +17,15 @@ jobs:
     - name: Build & Push the Docker Images
       run: cd ci && make all
 
+  sikalabs--ci-node:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to Docker Hub
+      run: docker login -u ondrejsika -p ${{ secrets.DOCKERHUB_ONDREJSIKA_PASSWORD }}
+    - name: Build & Push the Docker Images
+      run: cd ci && make all BASE_IMAGE=node:16 IMAGE_TAG_SUFFIX=-node
+
   sikalabs--dev:
     needs: sikalabs--ci
     runs-on: ubuntu-latest
