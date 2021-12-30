@@ -14,6 +14,7 @@
 - [sikalabs/pause](./pause)
 - [sikalabs/nginx-public](./nginx-public)
 - [sikalabs/debug-server](./debug-server)
+- [sikalabs/ca-certificates](./ca-certificates)
 
 ### Extra Images for Internal Usage
 

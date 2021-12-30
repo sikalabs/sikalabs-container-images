@@ -80,3 +80,12 @@ jobs:
       run: docker login -u ondrejsika -p ${{ secrets.DOCKERHUB_ONDREJSIKA_PASSWORD }}
     - name: Build & Push the Docker Images
       run: cd extra/deckschrubber && make all
+
+  sikalabs--ca-certificates:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to Docker Hub
+      run: docker login -u ondrejsika -p ${{ secrets.DOCKERHUB_ONDREJSIKA_PASSWORD }}
+    - name: Build & Push the Docker Images
+      run: cd ca-certificates && make all
