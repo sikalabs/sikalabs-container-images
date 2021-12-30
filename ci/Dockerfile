@@ -90,7 +90,7 @@ RUN curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/sk
 
 # slu (SikaLabs Utils)
 FROM base as slu
-ENV slu_VERSION=v0.27.0
+ENV slu_VERSION=v0.27.1
 RUN wget https://github.com/sikalabs/slu/releases/download/${slu_VERSION}/slu_${slu_VERSION}_linux_amd64.tar.gz && \
   tar -xvzf slu_${slu_VERSION}_linux_amd64.tar.gz && \
   mv slu /usr/local/bin/
