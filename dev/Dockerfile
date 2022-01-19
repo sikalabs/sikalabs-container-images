@@ -8,3 +8,4 @@ RUN apt-get install -y --no-install-recommends \
   traceroute \
   htop \
   procps
+COPY --from=cloudflare/cloudflared:2022.1.2 /usr/local/bin/ /usr/local/bin/

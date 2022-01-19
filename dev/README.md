@@ -9,6 +9,7 @@ Image with development tooling based on `sikalabs/ci`
 - telnet
 - ping
 - traceroute
+- cloudflared
 
 ## Build
 
