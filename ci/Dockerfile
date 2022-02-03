@@ -19,8 +19,6 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/* && \
   update-ca-certificates
 
-COPY sshx /usr/local/bin/
-
 # Docker
 FROM base as docker
 ENV DOCKER_VERSION=19.03.12
