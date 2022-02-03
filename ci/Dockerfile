@@ -95,6 +95,10 @@ RUN wget https://github.com/sikalabs/slu/releases/download/${slu_VERSION}/slu_${
   tar -xvzf slu_${slu_VERSION}_linux_amd64.tar.gz && \
   mv slu /usr/local/bin/
 
+FROM base as argocd
+RUN curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64 && \
+  chmod +x /usr/local/bin/argocd
+
 # Final Image
 FROM base
 # Install aws cli v2
@@ -113,4 +117,5 @@ COPY --from=vault /usr/local/bin/vault /usr/local/bin
 COPY --from=doctl /usr/local/bin/doctl /usr/local/bin
 COPY --from=skaffold /usr/local/bin/skaffold /usr/local/bin
 COPY --from=slu /usr/local/bin/slu /usr/local/bin
+COPY --from=argocd /usr/local/bin/argocd /usr/local/bin
 COPY --from=vojtechmares/statica:latest-stable /statica /usr/local/bin
