@@ -1,0 +1,10 @@
+#!/bin/bash
+
+. /etc/bash_completion
+
+. <(slu completion bash)
+. <(training-cli completion bash)
+
+. <(kubectl completion bash)
+. <(helm completion bash)
+
