@@ -14,6 +14,7 @@ RUN apt-get update && \
   sudo \
   moreutils \
   git \
+  gnupg2 \
   # required by aws cli
   less groff && \
   rm -rf /var/lib/apt/lists/* && \
