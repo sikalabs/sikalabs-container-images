@@ -10,6 +10,7 @@ Image with development tooling based on `sikalabs/ci`
 - ping
 - traceroute
 - cloudflared
+- ab (Apache Benchmark, apache2-utils)
 
 ## Build
 

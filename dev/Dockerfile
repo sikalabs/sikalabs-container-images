@@ -9,7 +9,8 @@ RUN apt-get install -y --no-install-recommends \
   iputils-ping \
   traceroute \
   htop \
-  procps
+  procps \
+  apache2-utils
 COPY bashrc /root/.bashrc
 
 COPY bin/k /usr/local/bin/
