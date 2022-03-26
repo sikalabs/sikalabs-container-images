@@ -11,6 +11,7 @@
 
 - [sikalabs/ci](./ci)
 - [sikalabs/kubectl](./kubectl)
+- [sikalabs/helm](./helm)
 - [sikalabs/pause](./pause)
 - [sikalabs/nginx-public](./nginx-public)
 - [sikalabs/debug-server](./debug-server)
