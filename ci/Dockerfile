@@ -70,7 +70,7 @@ RUN curl -fsSL https://releases.hashicorp.com/consul/$CONSUL_VERSION/consul_${CO
 
 # vault
 FROM base as vault
-ENV VAULT_VERSION=1.5.3
+ENV VAULT_VERSION=1.9.4
 RUN curl -fsSL https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip -o vault.zip \
   && unzip vault.zip \
   && mv vault /usr/local/bin \
