@@ -54,7 +54,7 @@ RUN curl -fsSL https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz -o he
 
 # terraform
 FROM base as terraform
-ENV TERRAFORM_VERSION=0.13.2
+ENV TERRAFORM_VERSION=1.1.9
 RUN curl -fsSL https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -o terraform.zip \
   && unzip terraform.zip \
   && mv terraform /usr/local/bin \
