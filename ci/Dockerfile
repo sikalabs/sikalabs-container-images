@@ -105,6 +105,8 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip" -o "a
   unzip -q awscliv2.zip && \
   ./aws/install && \
   rm -rf awscliv2.zip aws
+# TODO: Install from tar.gz
+RUN curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
 COPY --from=docker /usr/local/bin/docker /usr/local/bin
 COPY --from=docker_compose /usr/local/bin/docker-compose /usr/local/bin
 COPY --from=minio /usr/local/bin/mcli /usr/local/bin
