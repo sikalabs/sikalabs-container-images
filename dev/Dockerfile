@@ -4,6 +4,7 @@ RUN apt-get install -y --no-install-recommends \
   zsh \
   bash-completion \
   vim \
+  mc \
   tree \
   telnet \
   iputils-ping \
