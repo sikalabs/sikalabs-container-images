@@ -60,14 +60,6 @@ RUN curl -fsSL https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/terra
   && mv terraform /usr/local/bin \
   && rm -r terraform.zip
 
-# consul
-FROM base as consul
-ENV CONSUL_VERSION=1.7.2
-RUN curl -fsSL https://releases.hashicorp.com/consul/$CONSUL_VERSION/consul_${CONSUL_VERSION}_linux_amd64.zip -o consul.zip \
-  && unzip consul.zip \
-  && mv consul /usr/local/bin \
-  && rm -r consul.zip
-
 # vault
 FROM base as vault
 ENV VAULT_VERSION=1.9.4
@@ -113,7 +105,6 @@ COPY --from=minio /usr/local/bin/mcli /usr/local/bin
 COPY --from=kubectl /usr/local/bin/kubectl /usr/local/bin
 COPY --from=helm /usr/local/bin/helm /usr/local/bin
 COPY --from=terraform /usr/local/bin/terraform /usr/local/bin
-COPY --from=consul /usr/local/bin/consul /usr/local/bin
 COPY --from=vault /usr/local/bin/vault /usr/local/bin
 COPY --from=doctl /usr/local/bin/doctl /usr/local/bin
 COPY --from=skaffold /usr/local/bin/skaffold /usr/local/bin
