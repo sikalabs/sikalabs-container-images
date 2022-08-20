@@ -1,5 +1,5 @@
 FROM debian:11-slim
-COPY --from=sikalabs/slu:v0.36.1 /usr/local/bin/slu /usr/local/bin/slu
+COPY --from=sikalabs/slu:v0.47.0 /usr/local/bin/slu /usr/local/bin/slu
 WORKDIR /actions-runner
 RUN apt update && apt install -y curl sudo git ca-certificates
 RUN curl -o actions-runner-linux-x64-2.288.1.tar.gz -L https://github.com/actions/runner/releases/download/v2.288.1/actions-runner-linux-x64-2.288.1.tar.gz && \
