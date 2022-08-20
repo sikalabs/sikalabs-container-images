@@ -81,10 +81,7 @@ RUN curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/sk
 
 # slu (SikaLabs Utils)
 FROM base as slu
-ENV slu_VERSION=v0.47.0
-RUN wget https://github.com/sikalabs/slu/releases/download/${slu_VERSION}/slu_${slu_VERSION}_linux_amd64.tar.gz && \
-  tar -xvzf slu_${slu_VERSION}_linux_amd64.tar.gz && \
-  mv slu /usr/local/bin/
+RUN curl -fsSL https://raw.githubusercontent.com/sikalabs/slu/master/install.sh | sudo sh
 
 FROM base as argocd
 RUN curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64 && \
