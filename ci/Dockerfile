@@ -108,3 +108,4 @@ COPY --from=skaffold /usr/local/bin/skaffold /usr/local/bin
 COPY --from=slu /usr/local/bin/slu /usr/local/bin
 COPY --from=argocd /usr/local/bin/argocd /usr/local/bin
 COPY --from=vojtechmares/statica:latest-stable /statica /usr/local/bin
+RUN slu install-bin configboard-cli
