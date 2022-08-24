@@ -11,7 +11,8 @@ RUN apt-get install -y --no-install-recommends \
   traceroute \
   htop \
   procps \
-  apache2-utils
+  apache2-utils \
+  pv
 COPY bashrc /root/.bashrc
 
 COPY bin/k /usr/local/bin/
