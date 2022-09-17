@@ -12,7 +12,8 @@ RUN apt-get install -y --no-install-recommends \
   htop \
   procps \
   apache2-utils \
-  pv
+  pv \
+  openssh-server
 COPY bashrc /root/.bashrc
 
 COPY bin/k /usr/local/bin/
