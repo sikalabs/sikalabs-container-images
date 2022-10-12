@@ -23,17 +23,11 @@ RUN curl -fsSL https://raw.githubusercontent.com/sikalabs/slu/master/install.sh 
 
 # Docker
 FROM base as docker
-ENV DOCKER_VERSION=19.03.12
-RUN curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz \
-  && mv docker-${DOCKER_VERSION}.tgz docker.tgz \
-  && tar xzvf docker.tgz \
-  && mv docker/docker /usr/local/bin \
-  && rm -r docker docker.tgz
+RUN slu install-bin docker
 
 # Docker Compose
 FROM base as docker_compose
-ENV DOCKER_COMPOSE_VERSION=1.26.2
-RUN curl -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
+RUN slu install-bin docker-compose
 
 # Minio Client (mc -> mcli)
 FROM base as minio
@@ -43,42 +37,27 @@ RUN wget https://dl.minio.io/client/mc/release/linux-amd64/mc && \
 
 # kubectl
 FROM base as kubectl
-RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin
+RUN slu install-bin kubectl
 
 # helm
 FROM base as helm
-ENV HELM_VERSION=v3.7.1
-RUN curl -fsSL https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz -o helm.tar.gz \
-  && tar xzvf helm.tar.gz \
-  && mv linux-amd64/helm /usr/local/bin \
-  && rm -r linux-amd64 helm.tar.gz
+RUN slu install-bin helm
 
 # terraform
 FROM base as terraform
-ENV TERRAFORM_VERSION=1.2.1
-RUN curl -fsSL https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/terraform_${TERRAFORM_VERSION}_linux_amd64.zip -o terraform.zip \
-  && unzip terraform.zip \
-  && mv terraform /usr/local/bin \
-  && rm -r terraform.zip
+RUN slu install-bin terraform
 
 # vault
 FROM base as vault
-ENV VAULT_VERSION=1.9.4
-RUN curl -fsSL https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip -o vault.zip \
-  && unzip vault.zip \
-  && mv vault /usr/local/bin \
-  && rm -r vault.zip
+RUN slu install-bin vault
 
 # doctl
 FROM base as doctl
-ENV DOCTL_VERSION=1.37.0
-RUN curl -L https://github.com/digitalocean/doctl/releases/download/v${DOCTL_VERSION}/doctl-${DOCTL_VERSION}-linux-amd64.tar.gz | tar xz && \
-  mv doctl /usr/local/bin
+RUN slu install-bin doctl
 
 # skaffold
 FROM base as skaffold
-RUN curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \
-  sudo install skaffold /usr/local/bin/
+RUN slu install-bin skaffold
 
 FROM base as argocd
 RUN curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64 && \
