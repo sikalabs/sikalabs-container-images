@@ -19,6 +19,7 @@ RUN apt-get update && \
   less groff && \
   rm -rf /var/lib/apt/lists/* && \
   update-ca-certificates
+RUN curl -fsSL https://raw.githubusercontent.com/sikalabs/slu/master/install.sh | sudo sh
 
 # Docker
 FROM base as docker
@@ -79,10 +80,6 @@ FROM base as skaffold
 RUN curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \
   sudo install skaffold /usr/local/bin/
 
-# slu (SikaLabs Utils)
-FROM base as slu
-RUN curl -fsSL https://raw.githubusercontent.com/sikalabs/slu/master/install.sh | sudo sh
-
 FROM base as argocd
 RUN curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64 && \
   chmod +x /usr/local/bin/argocd
@@ -105,7 +102,6 @@ COPY --from=terraform /usr/local/bin/terraform /usr/local/bin
 COPY --from=vault /usr/local/bin/vault /usr/local/bin
 COPY --from=doctl /usr/local/bin/doctl /usr/local/bin
 COPY --from=skaffold /usr/local/bin/skaffold /usr/local/bin
-COPY --from=slu /usr/local/bin/slu /usr/local/bin
 COPY --from=argocd /usr/local/bin/argocd /usr/local/bin
 COPY --from=vojtechmares/statica:latest-stable /statica /usr/local/bin
 RUN slu install-bin configboard-cli
