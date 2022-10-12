@@ -4,7 +4,7 @@ IMAGE_TAG_SUFFIX=
 all: build push
 
 build:
-	docker build --platform linux/amd64 --build-arg BASE_IMAGE=$(BASE_IMAGE) -t sikalabs/ci$(IMAGE_TAG_SUFFIX) .
+	docker build --platform linux/amd64 --build-arg BASE_IMAGE=$(BASE_IMAGE) -t sikalabs/ci$(IMAGE_TAG_SUFFIX) . $(ARGS)
 
 push:
 	docker push sikalabs/ci$(IMAGE_TAG_SUFFIX)
