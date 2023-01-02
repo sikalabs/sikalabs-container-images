@@ -14,6 +14,7 @@ RUN apt-get install -y --no-install-recommends \
   procps \
   apache2-utils \
   pv \
+  redis-tools \
   openssh-server
 COPY bashrc /root/.bashrc
 
