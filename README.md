@@ -17,6 +17,10 @@
 - [sikalabs/debug-server](./debug-server)
 - [sikalabs/ca-certificates](./ca-certificates)
 
+### Extra Images
+
+- [sikalabs/dev-filebeat](./extra/dev-filebeat)
+
 ### Extra Images for Internal Usage
 
 - [sikalabs/extra:deckschrubber](./extra/deckschrubber)
