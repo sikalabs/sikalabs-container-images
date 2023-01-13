@@ -15,6 +15,7 @@ RUN apt-get update && \
   moreutils \
   git \
   gnupg2 \
+  postgresql-client \
   # required by aws cli
   less groff && \
   rm -rf /var/lib/apt/lists/* && \
