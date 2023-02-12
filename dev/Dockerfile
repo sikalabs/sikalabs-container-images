@@ -16,6 +16,7 @@ RUN apt-get install -y --no-install-recommends \
   pv \
   redis-tools \
   openssh-server
+COPY zshrc /root/.zshrc
 COPY bashrc /root/.bashrc
 
 COPY bin/k /usr/local/bin/
