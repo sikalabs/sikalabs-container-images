@@ -5,3 +5,6 @@ build:
 
 push:
 	docker push sikalabs/dev
+
+dev:
+	docker run -ti sikalabs/dev
