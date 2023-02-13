@@ -1,6 +1,13 @@
 export PROMPT="ZSH %n@%m%\:%~$ "
 export RPROMPT="%(?..%?)"
 
+export ZSH="/.oh-my-zsh"
+ZSH_THEME="alanpeabody"
+plugins=(git docker docker-compose)
+source $ZSH/oh-my-zsh.sh
+# Fix right prompt for alanpeabody theme
+export RPROMPT="%(?..%?)"
+
 autoload -Uz compinit
 compinit
 
