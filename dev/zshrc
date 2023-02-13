@@ -1,2 +1,11 @@
 export PROMPT="ZSH %n@%m%\:%~$ "
 export RPROMPT="%(?..%?)"
+
+autoload -Uz compinit
+compinit
+
+. <(slu completion zsh); compdef _slu slu
+. <(training-cli completion zsh) ; compdef _training-cli training-cli
+
+. <(kubectl completion zsh)
+. <(helm completion zsh)
