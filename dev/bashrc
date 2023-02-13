@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PS1="BASH $PS1"
+
 . /etc/bash_completion
 
 . <(slu completion bash)
