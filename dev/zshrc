@@ -1,2 +1,2 @@
-export PROMPT="%n@%m%\:%~$ "
+export PROMPT="ZSH %n@%m%\:%~$ "
 export RPROMPT="%(?..%?)"
