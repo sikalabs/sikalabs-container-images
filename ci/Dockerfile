@@ -60,6 +60,10 @@ RUN slu install-bin doctl
 FROM base as skaffold
 RUN slu install-bin skaffold
 
+# crane
+FROM base as crane
+RUN slu install-bin crane
+
 FROM base as argocd
 RUN curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64 && \
   chmod +x /usr/local/bin/argocd
@@ -83,6 +87,7 @@ COPY --from=vault /usr/local/bin/vault /usr/local/bin
 COPY --from=doctl /usr/local/bin/doctl /usr/local/bin
 COPY --from=skaffold /usr/local/bin/skaffold /usr/local/bin
 COPY --from=argocd /usr/local/bin/argocd /usr/local/bin
+COPY --from=crane /usr/local/bin/crane /usr/local/bin
 COPY --from=vojtechmares/statica:latest-stable /statica /usr/local/bin
 RUN slu install-bin configboard-cli
 RUN slu install-bin editorconfig-checker
