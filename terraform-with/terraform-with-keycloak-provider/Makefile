@@ -8,3 +8,8 @@ build:
 
 push:
 	docker push ${IMAGE}
+
+run-example:
+	cd example && \
+		docker build --platform linux/amd64 -t terraform-with-keycloak-provider-example . && \
+		docker run --rm --net none terraform-with-keycloak-provider-example
