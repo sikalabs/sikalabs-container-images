@@ -1,0 +1,7 @@
+.login-pf body {
+  background-image: url(https://static.sika.io/files/photos/keycloak-iceland/iceland-2023-05-06.jpg) !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
