@@ -68,6 +68,11 @@ FROM base as argocd
 RUN curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64 && \
   chmod +x /usr/local/bin/argocd
 
+FROM base as gitlab-terraform
+RUN curl -sSL -o /usr/local/bin/gitlab-terraform \
+  https://gitlab.com/gitlab-org/terraform-images/-/raw/master/src/bin/gitlab-terraform.sh && \
+  chmod +x /usr/local/bin/gitlab-terraform
+
 # Final Image
 FROM base
 # Install aws cli v2
@@ -88,6 +93,7 @@ COPY --from=doctl /usr/local/bin/doctl /usr/local/bin
 COPY --from=skaffold /usr/local/bin/skaffold /usr/local/bin
 COPY --from=argocd /usr/local/bin/argocd /usr/local/bin
 COPY --from=crane /usr/local/bin/crane /usr/local/bin
+COPY --from=gitlab-terraform /usr/local/bin/gitlab-terraform /usr/local/bin/gitlab-terraform
 COPY --from=vojtechmares/statica:latest-stable /statica /usr/local/bin
 RUN slu install-bin configboard-cli
 RUN slu install-bin editorconfig-checker
