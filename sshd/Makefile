@@ -8,6 +8,7 @@ build:
 
 push:
 	docker push $(DOCKERHUB_IMAGE)
+	docker push $(GITHUB_IMAGE)
 
 run:
 	docker run --name sshd -d -p 2222:22 $(DOCKERHUB_IMAGE)
