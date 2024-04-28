@@ -54,6 +54,21 @@ jobs:
     - name: Build & Push the Docker Images
       run: cd dev && make all
 
+  sikalabs--dev-az:
+    needs: sikalabs--dev
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to Docker Hub
+      run: docker login -u ondrejsika -p ${{ secrets.DOCKERHUB_ONDREJSIKA_PASSWORD }}
+    - name: Login to ghcr.io
+      run: docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
+    - name: Build & Push the Docker Images
+      run: cd dev-az && make all
+
   sikalabs--kubectl:
     runs-on: ubuntu-latest
     steps:
