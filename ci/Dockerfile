@@ -77,6 +77,11 @@ RUN curl -sSL -o /usr/local/bin/gitlab-terraform \
   https://gitlab.com/gitlab-org/terraform-images/-/raw/master/src/bin/gitlab-terraform.sh && \
   chmod +x /usr/local/bin/gitlab-terraform
 
+FROM base as git-repo-sync.sh
+RUN curl -sSL -o /usr/local/bin/git-repo-sync.sh \
+  https://raw.githubusercontent.com/sikalabs/git-repo-sync.sh/master/git-repo-sync.sh && \
+  chmod +x /usr/local/bin/git-repo-sync.sh
+
 # Final Image
 FROM base
 # Install aws cli v2
@@ -99,6 +104,7 @@ COPY --from=argocd /usr/local/bin/argocd /usr/local/bin
 COPY --from=crane /usr/local/bin/crane /usr/local/bin
 COPY --from=clicksecret-cli /usr/local/bin/clicksecret-cli /usr/local/bin
 COPY --from=gitlab-terraform /usr/local/bin/gitlab-terraform /usr/local/bin/gitlab-terraform
+COPY --from=git-repo-sync.sh /usr/local/bin/git-repo-sync.sh /usr/local/bin/git-repo-sync.sh
 COPY --from=vojtechmares/statica:latest-stable /statica /usr/local/bin
 RUN slu install-bin configboard-cli
 RUN slu install-bin editorconfig-checker
