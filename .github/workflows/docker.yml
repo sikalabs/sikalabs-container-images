@@ -231,3 +231,12 @@ jobs:
       run: docker login -u ondrejsika -p ${{ secrets.DOCKERHUB_ONDREJSIKA_PASSWORD }}
     - name: Build & Push the Docker Images
       run: cd tailscale && make all
+
+  sikalabs--https-proxy-using-caddy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to Docker Hub
+      run: docker login -u ondrejsika -p ${{ secrets.DOCKERHUB_ONDREJSIKA_PASSWORD }}
+    - name: Build & Push the Docker Images
+      run: cd https_proxy_using_caddy && make all
