@@ -24,7 +24,7 @@ RUN curl -fsSL https://raw.githubusercontent.com/sikalabs/slu/master/install.sh 
 
 # Docker
 FROM base as docker
-RUN slu install-bin docker
+RUN slu install-bin docker --version 24.0.5
 
 # Docker Compose
 FROM base as docker_compose
