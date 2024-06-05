@@ -1,4 +1,4 @@
-BASE_IMAGE=debian:11-slim
+BASE_IMAGE=debian:12-slim
 IMAGE_TAG_SUFFIX=
 
 all: build push
