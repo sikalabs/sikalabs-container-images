@@ -85,10 +85,9 @@ RUN curl -sSL -o /usr/local/bin/git-repo-sync.sh \
 # Final Image
 FROM base
 # Install aws cli v2
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip" -o "awscliv2.zip" && \
-  unzip -q awscliv2.zip && \
-  ./aws/install && \
-  rm -rf awscliv2.zip aws
+RUN apt-get update && \
+  apt-get install -y --no-install-recommends awscli && \
+  rm -rf /var/lib/apt/lists/*
 # TODO: Install from tar.gz
 RUN curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
 COPY --from=docker /usr/local/bin/docker /usr/local/bin
