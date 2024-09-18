@@ -107,3 +107,4 @@ COPY --from=git-repo-sync.sh /usr/local/bin/git-repo-sync.sh /usr/local/bin/git-
 COPY --from=vojtechmares/statica:latest-stable /statica /usr/local/bin
 RUN slu install-bin configboard-cli
 RUN slu install-bin editorconfig-checker
+RUN slu install-bin slr
