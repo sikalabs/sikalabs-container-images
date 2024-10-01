@@ -8,5 +8,9 @@ build:
 
 push:
 	docker push sikalabs/ci$(IMAGE_TAG_SUFFIX)
+
 	docker tag sikalabs/ci$(IMAGE_TAG_SUFFIX) ondrejsika/ci$(IMAGE_TAG_SUFFIX)
 	docker push ondrejsika/ci$(IMAGE_TAG_SUFFIX)
+
+	docker tag sikalabs/ci$(IMAGE_TAG_SUFFIX) ghcr.io/sikalabs/ci$(IMAGE_TAG_SUFFIX)
+	docker push ghcr.io/sikalabs/ci$(IMAGE_TAG_SUFFIX)
