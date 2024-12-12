@@ -6,3 +6,4 @@ COPY ./themes/sika-io /opt/bitnami/keycloak/themes/sika-io
 COPY ./themes/sikademo /opt/bitnami/keycloak/themes/sikademo
 COPY ./themes/rails /opt/bitnami/keycloak/themes/rails
 COPY ./themes/edualf /opt/bitnami/keycloak/themes/edualf
+COPY ./themes/integritty /opt/bitnami/keycloak/themes/integritty
