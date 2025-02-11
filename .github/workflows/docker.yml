@@ -194,7 +194,7 @@ jobs:
     - name: Login to Docker Hub
       run: docker login -u ondrejsika -p ${{ secrets.DOCKERHUB_ONDREJSIKA_PASSWORD }}
     - name: Build & Push the Docker Images
-      run: cd bitnami-keycloak-sikalabs-theme && make all
+      run: cd bitnami-keycloak-sikalabs-theme && make build-push-all
 
   sikalabs--terraform-with-random-provider:
     runs-on: ubuntu-latest
