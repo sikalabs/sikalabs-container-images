@@ -84,6 +84,7 @@ RUN curl -sSL -o /usr/local/bin/git-repo-sync.sh \
 
 # Final Image
 FROM base
+LABEL org.opencontainers.image.source https://github.com/sikalabs/sikalabs-container-images
 # Install aws cli v2
 RUN apt-get update && \
   apt-get install -y --no-install-recommends awscli && \
