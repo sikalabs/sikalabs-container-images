@@ -1,5 +1,6 @@
 ARG BASE_IMAGE
 FROM $BASE_IMAGE
+LABEL org.opencontainers.image.source "https://github.com/sikalabs/sikalabs-container-images"
 COPY ./themes/sikalabs /opt/bitnami/keycloak/themes/sikalabs
 COPY ./themes/ondrejsika /opt/bitnami/keycloak/themes/ondrejsika
 COPY ./themes/sika-io /opt/bitnami/keycloak/themes/sika-io
