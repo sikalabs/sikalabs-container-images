@@ -14,7 +14,8 @@ build-push-all:
 	@make build-push BASE_TAG=20.0.3-debian-11-r5
 
 _build:
-	docker build --platform linux/amd64 --build-arg BASE_IMAGE=$(BASE_IMAGE_NAME):$(BASE_TAG) -t sikalabs/bitnami-keycloak-sikalabs-theme:$(BASE_TAG) . $(ARGS)
+	docker build --platform linux/amd64 --build-arg BASE_IMAGE=$(BASE_IMAGE_NAME):$(BASE_TAG) -t sikalabs/bitnami-keycloak-sikalabs-theme:$(BASE_TAG) -t ghcr.io/sikalabs/bitnami-keycloak-sikalabs-theme:$(BASE_TAG) . $(ARGS)
 
 _push:
 	docker push sikalabs/bitnami-keycloak-sikalabs-theme:$(BASE_TAG)
+	docker push ghcr.io/sikalabs/bitnami-keycloak-sikalabs-theme:$(BASE_TAG)
