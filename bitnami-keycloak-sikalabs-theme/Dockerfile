@@ -9,3 +9,4 @@ COPY ./themes/edualf /opt/bitnami/keycloak/themes/edualf
 COPY ./themes/integritty /opt/bitnami/keycloak/themes/integritty
 COPY ./themes/forclassmates /opt/bitnami/keycloak/themes/forclassmates
 COPY ./themes/eventlook /opt/bitnami/keycloak/themes/eventlook
+COPY ./themes/mirandamedia /opt/bitnami/keycloak/themes/mirandamedia
