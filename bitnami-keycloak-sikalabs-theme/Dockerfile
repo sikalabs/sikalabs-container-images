@@ -12,3 +12,4 @@ COPY ./themes/forclassmates /opt/bitnami/keycloak/themes/forclassmates
 COPY ./themes/eventlook /opt/bitnami/keycloak/themes/eventlook
 COPY ./themes/mirandamedia /opt/bitnami/keycloak/themes/mirandamedia
 COPY ./themes/training /opt/bitnami/keycloak/themes/training
+COPY ./themes/mstp /opt/bitnami/keycloak/themes/mstp
