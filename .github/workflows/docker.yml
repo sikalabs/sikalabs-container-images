@@ -8,6 +8,17 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
+  sikalabs--kaniko-coreutils:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+    - uses: actions/checkout@v2
+    - name: Log in to GitHub Container Registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
+    - name: Build & Push the Docker Images
+      run: cd kaniko-coreutils && make all
   sikalabs--ci:
     runs-on: ubuntu-latest
     permissions:
