@@ -1,11 +1,17 @@
+ARG TOOLS_BASE_IMAGE=alpine:3.20
 ARG BASE_IMAGE=gcr.io/kaniko-project/executor:v1.23.2-debug
-FROM $BASE_IMAGE as base
 
-RUN apk add --no-cache coreutils bash git \
-    && ln -sf /usr/bin/mkfifo /bin/mkfifo  \
-    && ln -sf /usr/bin/echo   /bin/echo \
-    && ln -sf /usr/bin/git    /bin/git \
+FROM $TOOLS_BASE_IMAGE AS tools
+RUN apk add --no-cache git
 
-RUN ln -sf /busybox/sh /bin/sh
+FROM $BASE_IMAGE
+COPY --from=tools /usr/bin/git /usr/bin/
 
-ENTRYPOINT ["/bin/sh", "-c"]
+RUN for cmd in echo mkfifo; do \
+        ln -s /busybox/busybox /usr/bin/$cmd && \
+        ln -s /busybox/busybox /bin/$cmd ; \
+    done \
+ && ln -s /usr/bin/git /bin/git \
+ && ln -sf /busybox/sh /bin/sh
+
+ENTRYPOINT ["/bin/sh","-c"]
