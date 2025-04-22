@@ -7,7 +7,7 @@ RUN apk add --no-cache git
 FROM $BASE_IMAGE
 COPY --from=tools /usr/bin/git /usr/bin/
 
-RUN for cmd in echo mkfifo; do \
+RUN for cmd in cat echo mkfifo; do \
         ln -s /busybox/busybox /usr/bin/$cmd && \
         ln -s /busybox/busybox /bin/$cmd ; \
     done \
