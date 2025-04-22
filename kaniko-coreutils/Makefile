@@ -1,13 +1,13 @@
-TOOLS_BASE_IMAGE=alpine:3.20
-BASE_IMAGE=gcr.io/kaniko-project/executor:v1.23.2-debug
-IMAGE_TAG_SUFFIX=":0.1.1"
+BASE_IMAGE=debian:bookworm-slim
+KANIKO_IMAGE=gcr.io/kaniko-project/executor:v1.23.2-debug
+IMAGE_TAG_SUFFIX=":0.1.3"
 
 all: build push
 
 build:
 	docker build --platform linux/amd64 \
-		--build-arg TOOLS_BASE_IMAGE=$(TOOLS_BASE_IMAGE) \
 		--build-arg BASE_IMAGE=$(BASE_IMAGE) \
+		--build-arg KANIKO_IMAGE=$(KANIKO_IMAGE) \
 		-t sikalabs/kaniko-coreutils$(IMAGE_TAG_SUFFIX) . $(ARGS)
 
 push:

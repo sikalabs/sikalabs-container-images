@@ -1,17 +1,21 @@
-ARG TOOLS_BASE_IMAGE=alpine:3.20
-ARG BASE_IMAGE=gcr.io/kaniko-project/executor:v1.23.2-debug
+ARG BASE_IMAGE=debian:bookworm-slim
+ARG KANIKO_IMAGE=gcr.io/kaniko-project/executor:v1.23.2-debug
 
-FROM $TOOLS_BASE_IMAGE AS tools
-RUN apk add --no-cache git
+FROM $KANIKO_IMAGE AS kaniko-src
 
-FROM $BASE_IMAGE
-COPY --from=tools /usr/bin/git /usr/bin/
+FROM $BASE_IMAGE AS kaniko-debian
+RUN apt-get update -qq && \
+    apt-get install -y --no-install-recommends \
+        git \
+        curl \
+        openssh-client \
+        ca-certificates \
+        coreutils \
+        busybox && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN for cmd in cat echo mkfifo; do \
-        ln -s /busybox/busybox /usr/bin/$cmd && \
-        ln -s /busybox/busybox /bin/$cmd ; \
-    done \
- && ln -s /usr/bin/git /bin/git \
- && ln -sf /busybox/sh /bin/sh
+COPY --from=kaniko-src /kaniko /kaniko
 
-ENTRYPOINT ["/bin/sh","-c"]
+ENV PATH="/kaniko:${PATH}"
+
+ENTRYPOINT ["/bin/sh", "-c"]
