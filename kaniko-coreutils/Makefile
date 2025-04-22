@@ -11,7 +11,5 @@ build:
 		-t sikalabs/kaniko-coreutils$(IMAGE_TAG_SUFFIX) . $(ARGS)
 
 push:
-	docker push sikalabs/kaniko-coreutils$(IMAGE_TAG_SUFFIX)
-
 	docker tag sikalabs/kaniko-coreutils$(IMAGE_TAG_SUFFIX) ghcr.io/sikalabs/kaniko-coreutils$(IMAGE_TAG_SUFFIX)
 	docker push ghcr.io/sikalabs/kaniko-coreutils$(IMAGE_TAG_SUFFIX)
