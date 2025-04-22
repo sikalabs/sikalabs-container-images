@@ -16,6 +16,7 @@
 - [sikalabs/nginx-public](./nginx-public)
 - [sikalabs/debug-server](./debug-server)
 - [sikalabs/ca-certificates](./ca-certificates)
+- [sikalabs/kaniko-coreutils](./kaniko-coreutils)
 
 ### Extra Images
 
