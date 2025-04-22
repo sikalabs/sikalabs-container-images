@@ -3,6 +3,7 @@
 
 # Editor
 .vscode
+.idea
 
 # Terraform
 .infracost
