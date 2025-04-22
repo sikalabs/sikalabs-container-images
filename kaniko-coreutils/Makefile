@@ -1,6 +1,6 @@
 BASE_IMAGE=debian:bookworm-slim
 KANIKO_IMAGE=gcr.io/kaniko-project/executor:v1.23.2-debug
-IMAGE_TAG_SUFFIX=":0.1.3"
+IMAGE_TAG_SUFFIX=":0.1.4"
 
 all: build push
 

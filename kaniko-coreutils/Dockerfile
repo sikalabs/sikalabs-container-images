@@ -11,6 +11,7 @@ RUN apt-get update -qq && \
         openssh-client \
         ca-certificates \
         coreutils \
+        unzip \
         busybox && \
     rm -rf /var/lib/apt/lists/*
 
