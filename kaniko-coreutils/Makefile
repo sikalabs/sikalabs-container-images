@@ -1,6 +1,6 @@
 TOOLS_BASE_IMAGE=alpine:3.20
 BASE_IMAGE=gcr.io/kaniko-project/executor:v1.23.2-debug
-IMAGE_TAG_SUFFIX=":0.1.0"
+IMAGE_TAG_SUFFIX=":0.1.1"
 
 all: build push
 
