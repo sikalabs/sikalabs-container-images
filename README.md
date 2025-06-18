@@ -17,6 +17,7 @@
 - [sikalabs/debug-server](./debug-server)
 - [sikalabs/ca-certificates](./ca-certificates)
 - [sikalabs/kaniko-coreutils](./kaniko-coreutils)
+- [sikalabs/debian-with-argo-rollouts](./debian-with-argo-rollouts)
 
 ### Extra Images
 
