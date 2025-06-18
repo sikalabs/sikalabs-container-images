@@ -100,6 +100,5 @@ COPY --from=argocd /usr/local/bin/argocd /usr/local/bin
 COPY --from=crane /usr/local/bin/crane /usr/local/bin
 COPY --from=gitlab-terraform /usr/local/bin/gitlab-terraform /usr/local/bin/gitlab-terraform
 COPY --from=git-repo-sync.sh /usr/local/bin/git-repo-sync.sh /usr/local/bin/git-repo-sync.sh
-COPY --from=vojtechmares/statica:latest-stable /statica /usr/local/bin
 RUN slu install-bin editorconfig-checker
 RUN slu install-bin slr
