@@ -1,0 +1,7 @@
+.login-pf body {
+  background-image: url(https://keycloak-theme-images.vercel.app/images/forendors.jpg) !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
