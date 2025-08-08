@@ -1,11 +1,12 @@
 ARG BASE_IMAGE
 FROM $BASE_IMAGE
-LABEL org.opencontainers.image.source "https://github.com/sikalabs/sikalabs-container-images"
+LABEL org.opencontainers.image.source="https://github.com/sikalabs/sikalabs-container-images"
 COPY ./themes/sikalabs /opt/bitnami/keycloak/themes/sikalabs
 COPY ./themes/ondrejsika /opt/bitnami/keycloak/themes/ondrejsika
 COPY ./themes/sika-io /opt/bitnami/keycloak/themes/sika-io
 COPY ./themes/sikademo /opt/bitnami/keycloak/themes/sikademo
 COPY ./themes/rails /opt/bitnami/keycloak/themes/rails
+COPY ./themes/rails_no_login_form /opt/bitnami/keycloak/themes/rails_no_login_form
 COPY ./themes/rails2 /opt/bitnami/keycloak/themes/rails2
 COPY ./themes/edualf /opt/bitnami/keycloak/themes/edualf
 COPY ./themes/integritty /opt/bitnami/keycloak/themes/integritty
