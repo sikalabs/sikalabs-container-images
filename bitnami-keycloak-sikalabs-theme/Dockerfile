@@ -8,6 +8,7 @@ COPY ./themes/sikademo /opt/bitnami/keycloak/themes/sikademo
 COPY ./themes/rails /opt/bitnami/keycloak/themes/rails
 COPY ./themes/rails_no_login_form /opt/bitnami/keycloak/themes/rails_no_login_form
 COPY ./themes/rails2 /opt/bitnami/keycloak/themes/rails2
+COPY ./themes/rails2_no_login_form /opt/bitnami/keycloak/themes/rails2_no_login_form
 COPY ./themes/edualf /opt/bitnami/keycloak/themes/edualf
 COPY ./themes/integritty /opt/bitnami/keycloak/themes/integritty
 COPY ./themes/forclassmates /opt/bitnami/keycloak/themes/forclassmates
