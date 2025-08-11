@@ -17,3 +17,4 @@ COPY ./themes/mirandamedia /opt/bitnami/keycloak/themes/mirandamedia
 COPY ./themes/training /opt/bitnami/keycloak/themes/training
 COPY ./themes/mstp /opt/bitnami/keycloak/themes/mstp
 COPY ./themes/forendors /opt/bitnami/keycloak/themes/forendors
+COPY ./themes/ostrava /opt/bitnami/keycloak/themes/ostrava
