@@ -42,9 +42,9 @@ jobs:
     - name: Log in to GitHub Container Registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
     - name: Build & Push the Docker Images
-      run: cd ci && make all BASE_IMAGE=node:16 IMAGE_TAG_SUFFIX=-node
+      run: cd ci && make all BASE_IMAGE=node:slim IMAGE_TAG_SUFFIX=-node
 
-  sikalabs--ci-node-16:
+  sikalabs--ci-node-24:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -53,18 +53,7 @@ jobs:
     - name: Log in to GitHub Container Registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
     - name: Build & Push the Docker Images
-      run: cd ci && make all BASE_IMAGE=node:16 IMAGE_TAG_SUFFIX=-node:16
-
-  sikalabs--ci-node-18:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Login to Docker Hub
-      run: docker login -u ondrejsika -p ${{ secrets.DOCKERHUB_ONDREJSIKA_PASSWORD }}
-    - name: Log in to GitHub Container Registry
-      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
-    - name: Build & Push the Docker Images
-      run: cd ci && make all BASE_IMAGE=node:18 IMAGE_TAG_SUFFIX=-node:18
+      run: cd ci && make all BASE_IMAGE=node:24-slim IMAGE_TAG_SUFFIX=-node:24
 
   sikalabs--dev:
     needs: sikalabs--ci
