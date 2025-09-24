@@ -12,6 +12,7 @@
 ## Images
 
 - [sikalabs/ci](./ci)
+- [sikalabs/dev](./dev)
 - [sikalabs/kubectl](./kubectl)
 - [sikalabs/helm](./helm)
 - [sikalabs/pause](./pause)
