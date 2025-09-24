@@ -1,6 +1,6 @@
 ARG TERRAFORM_IMAGE_VERSION=1.4
 
-FROM sikalabs/slu:v0.89.0 as download-provider
+FROM sikalabs/slu:v0.89.0 AS download-provider
 RUN apt-get update && apt-get install -y ca-certificates
 RUN slu install-any-bin \
   --url https://github.com/mrparkers/terraform-provider-keycloak/releases/download/v4.2.0/terraform-provider-keycloak_4.2.0_linux_amd64.zip \
