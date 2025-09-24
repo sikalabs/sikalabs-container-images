@@ -1,5 +1,5 @@
 ARG BASE_IMAGE=debian:13-slim
-FROM $BASE_IMAGE as base
+FROM $BASE_IMAGE AS base
 
 RUN apt-get update && \
   apt-get install -y --no-install-recommends \
@@ -23,57 +23,57 @@ RUN apt-get update && \
 RUN curl -fsSL https://raw.githubusercontent.com/sikalabs/slu/master/install.sh | sudo sh
 
 # Docker
-FROM base as docker
+FROM base AS docker
 RUN slu install-bin docker
 
 # Docker Compose
-FROM base as docker_compose
+FROM base AS docker_compose
 RUN slu install-bin docker-compose
 
 # Minio Client (mc -> mcli)
-FROM base as minio
+FROM base AS minio
 RUN wget https://dl.minio.io/client/mc/release/linux-amd64/mc && \
   mv mc /usr/local/bin/mcli && \
   chmod +x /usr/local/bin/mcli
 
 # kubectl
-FROM base as kubectl
+FROM base AS kubectl
 RUN slu install-bin kubectl
 
 # helm
-FROM base as helm
+FROM base AS helm
 RUN slu install-bin helm
 
 # terraform
-FROM base as terraform
+FROM base AS terraform
 RUN slu install-bin terraform
 
 # vault
-FROM base as vault
+FROM base AS vault
 RUN slu install-bin vault
 
 # doctl
-FROM base as doctl
+FROM base AS doctl
 RUN slu install-bin doctl
 
 # skaffold
-FROM base as skaffold
+FROM base AS skaffold
 RUN slu install-bin skaffold
 
 # crane
-FROM base as crane
+FROM base AS crane
 RUN slu install-bin crane
 
-FROM base as argocd
+FROM base AS argocd
 RUN curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64 && \
   chmod +x /usr/local/bin/argocd
 
-FROM base as gitlab-terraform
+FROM base AS gitlab-terraform
 RUN curl -sSL -o /usr/local/bin/gitlab-terraform \
   https://gitlab.com/gitlab-org/terraform-images/-/raw/master/src/bin/gitlab-terraform.sh && \
   chmod +x /usr/local/bin/gitlab-terraform
 
-FROM base as git-repo-sync.sh
+FROM base AS git-repo-sync.sh
 RUN curl -sSL -o /usr/local/bin/git-repo-sync.sh \
   https://raw.githubusercontent.com/sikalabs/git-repo-sync.sh/master/git-repo-sync.sh && \
   chmod +x /usr/local/bin/git-repo-sync.sh
