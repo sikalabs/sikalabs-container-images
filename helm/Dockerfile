@@ -1,2 +1,2 @@
-FROM sikalabs/ca-certificates as base
+FROM sikalabs/ca-certificates AS base
 COPY --from=sikalabs/ci /usr/local/bin/helm /usr/local/bin
