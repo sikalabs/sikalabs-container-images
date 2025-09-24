@@ -1,4 +1,4 @@
-[__Skoleni Docker__](https://ondrej-sika.cz/skoleni/docker/) 🚀💻
+[SikaLabs](https://sikalabs.com) | [Ondrej Sika (sika.io)](https://sika.io) | [__Skoleni Docker__](https://ondrej-sika.cz/skoleni/docker/) 🚀💻
 
 <p align="center">
   <h1 align="center">sikalabs/sikalabs-container-images</h1>
