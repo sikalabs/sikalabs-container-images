@@ -1,3 +1,5 @@
+[SikaLabs](https://sikalabs.com) | [Ondrej Sika (sika.io)](https://sika.io) | [__Skoleni Gitlab CI__](https://ondrej-sika.cz/skoleni/gitlab-ci/) 🚀💻
+
 # sikalabs/ci image
 
 Docker image for my Gitlab CI jobs.
