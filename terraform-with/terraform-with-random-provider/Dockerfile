@@ -1,6 +1,6 @@
 ARG TERRAFORM_IMAGE_VERSION=1.4
 
-FROM sikalabs/slu:v0.66.0 as download-provider
+FROM sikalabs/slu:v0.89.0 as download-provider
 RUN apt-get update && apt-get install -y ca-certificates
 RUN slu install-any-bin \
   --url https://releases.hashicorp.com/terraform-provider-random/3.5.1/terraform-provider-random_3.5.1_linux_amd64.zip \
