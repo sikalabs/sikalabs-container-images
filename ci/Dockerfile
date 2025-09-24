@@ -88,7 +88,8 @@ RUN apt-get update && \
 # TODO: Install from tar.gz
 RUN curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
 COPY --from=docker /usr/local/bin/docker /usr/local/bin
-COPY --from=docker_compose /usr/local/bin/docker-compose /usr/local/bin
+COPY --from=docker_compose /usr/local/bin/docker-compose /usr/local/lib/docker/cli-plugins/docker-compose
+RUN ln -s /usr/local/lib/docker/cli-plugins/docker-compose /usr/local/bin/docker-compose
 COPY --from=minio /usr/local/bin/mcli /usr/local/bin
 COPY --from=kubectl /usr/local/bin/kubectl /usr/local/bin
 COPY --from=helm /usr/local/bin/helm /usr/local/bin
