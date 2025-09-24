@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=debian:12-slim
+ARG BASE_IMAGE=debian:13-slim
 FROM $BASE_IMAGE as base
 
 RUN apt-get update && \
