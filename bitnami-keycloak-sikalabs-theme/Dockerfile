@@ -22,3 +22,4 @@ COPY ./themes/pss /opt/bitnami/keycloak/themes/pss
 COPY ./themes/lightblue /opt/bitnami/keycloak/themes/lightblue
 COPY ./themes/lightgreen /opt/bitnami/keycloak/themes/lightgreen
 COPY ./themes/lightred /opt/bitnami/keycloak/themes/lightred
+COPY ./themes/lightyellow /opt/bitnami/keycloak/themes/lightyellow
