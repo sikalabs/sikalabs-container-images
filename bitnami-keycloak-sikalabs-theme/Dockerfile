@@ -19,3 +19,4 @@ COPY ./themes/mstp /opt/bitnami/keycloak/themes/mstp
 COPY ./themes/forendors /opt/bitnami/keycloak/themes/forendors
 COPY ./themes/ostrava /opt/bitnami/keycloak/themes/ostrava
 COPY ./themes/pss /opt/bitnami/keycloak/themes/pss
+COPY ./themes/lightblue /opt/bitnami/keycloak/themes/lightblue
