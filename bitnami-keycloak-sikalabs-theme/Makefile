@@ -1,4 +1,4 @@
-BASE_IMAGE_NAME=docker.io/bitnami/keycloak
+BASE_IMAGE_NAME=docker.io/bitnamilegacy/keycloak
 BASE_TAG=26.3.3-debian-12-r0
 
 default: build-push
