@@ -25,5 +25,6 @@ RUN chmod +x /usr/local/bin/k
 
 COPY --from=cloudflare/cloudflared:2022.1.2 /usr/local/bin/ /usr/local/bin/
 COPY --from=ondrejsika/training-cli:v0.4.2 /usr/local/bin/training-cli /usr/local/bin/
+COPY --from=ghcr.io/sikalabs/pause /pause /usr/local/bin/
 
 CMD [ "zsh" ]
