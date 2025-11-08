@@ -97,6 +97,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Login to Docker Hub
       run: docker login -u ondrejsika -p ${{ secrets.DOCKERHUB_ONDREJSIKA_PASSWORD }}
+    - name: Login to ghcr.io
+      run: docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
     - name: Build & Push the Docker Images
       run: cd pause && make all
 
