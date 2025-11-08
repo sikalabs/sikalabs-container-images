@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>repogendemo.com</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0
+        }
+        html {
+            height: 100%;
+        }
+        footer, main {
+            display: block;
+        }
+        body {
+            min-height: 100%;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            font-size: 1.6em;
+        }
+        a {
+            text-decoration: none;
+            color: #131480;
+        }
+        footer {
+            background: #F1F1F1
+        }
+        main {
+            max-width: 1000px;
+            margin: auto;
+        }
+        .content {
+            width: 100%;
+            padding: 10px 40px;
+        }
+        footer .content {
+            flex-wrap: wrap;
+            justify-content: space-around;
+            display: flex;
+        }
+        footer a {
+            padding: 10px;
+            color: #000;
+            display: flex;
+            align-items: center;
+        }
+        footer img {
+            max-width: 90px;
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 1.2em;
+            }
+            main .content {
+                padding: 80px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="content">
+            <img src="/RGD23_white_on_brown.png" width="200px">
+        </div>
+    </main>
+</body>
+</html>
