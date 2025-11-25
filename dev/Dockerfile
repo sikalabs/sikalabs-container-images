@@ -15,6 +15,7 @@ RUN apt-get install -y --no-install-recommends \
   apache2-utils \
   pv \
   redis-tools \
+  postgresql-client \
   openssh-server
 RUN git clone https://github.com/ohmyzsh/ohmyzsh.git /.oh-my-zsh
 COPY zshrc /root/.zshrc
