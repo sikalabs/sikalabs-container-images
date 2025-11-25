@@ -8,6 +8,7 @@ RUN apt-get install -y --no-install-recommends \
   tree \
   telnet \
   iputils-ping \
+  iproute2 \
   traceroute \
   htop \
   procps \
