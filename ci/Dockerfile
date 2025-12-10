@@ -30,6 +30,10 @@ RUN slu install-bin docker
 FROM base AS docker_compose
 RUN slu install-bin docker-compose
 
+# Docker Buildx
+FROM base AS docker_buildx
+RUN slu install-bin docker-buildx
+
 # Minio Client (mc -> mcli)
 FROM base AS minio
 RUN wget https://dl.minio.io/client/mc/release/linux-amd64/mc && \
@@ -89,6 +93,7 @@ RUN apt-get update && \
 RUN curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
 COPY --from=docker /usr/local/bin/docker /usr/local/bin
 COPY --from=docker_compose /usr/local/bin/docker-compose /usr/local/lib/docker/cli-plugins/docker-compose
+COPY --from=docker_buildx /usr/local/bin/docker-buildx /usr/local/lib/docker/cli-plugins/docker-buildx
 RUN ln -s /usr/local/lib/docker/cli-plugins/docker-compose /usr/local/bin/docker-compose
 COPY --from=minio /usr/local/bin/mcli /usr/local/bin
 COPY --from=kubectl /usr/local/bin/kubectl /usr/local/bin
