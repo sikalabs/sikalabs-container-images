@@ -32,9 +32,7 @@ RUN slu install-bin docker-compose
 
 # Docker Buildx
 FROM base AS docker_buildx
-# TODO: switch to original slu on next release of slu
-RUN slu install-bin master_slu
-RUN master_slu install-bin docker-buildx
+RUN slu install-bin docker-buildx
 
 # Minio Client (mc -> mcli)
 FROM base AS minio
