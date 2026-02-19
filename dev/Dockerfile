@@ -16,11 +16,14 @@ RUN apt-get install -y --no-install-recommends \
   pv \
   redis-tools \
   postgresql-client \
-  openssh-server
+  openssh-server \
+  pipx
 RUN slu install-bin kaf
 RUN git clone https://github.com/ohmyzsh/ohmyzsh.git /.oh-my-zsh
 COPY zshrc /root/.zshrc
 COPY bashrc /root/.bashrc
+RUN echo 'export PATH="$HOME/.local/bin:$PATH"' >> /root/.zshrc
+RUN echo 'export PATH="$HOME/.local/bin:$PATH"' >> /root/.bashrc
 
 COPY bin/k /usr/local/bin/
 RUN chmod +x /usr/local/bin/k
