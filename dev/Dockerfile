@@ -17,6 +17,7 @@ RUN apt-get install -y --no-install-recommends \
   redis-tools \
   postgresql-client \
   openssh-server
+RUN slu install-bin kaf
 RUN git clone https://github.com/ohmyzsh/ohmyzsh.git /.oh-my-zsh
 COPY zshrc /root/.zshrc
 COPY bashrc /root/.bashrc
