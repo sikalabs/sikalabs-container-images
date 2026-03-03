@@ -24,3 +24,4 @@ COPY ./themes/lightgreen /opt/bitnami/keycloak/themes/lightgreen
 COPY ./themes/lightred /opt/bitnami/keycloak/themes/lightred
 COPY ./themes/lightyellow /opt/bitnami/keycloak/themes/lightyellow
 COPY ./themes/isseurope /opt/bitnami/keycloak/themes/isseurope
+COPY ./themes/ica /opt/bitnami/keycloak/themes/ica
