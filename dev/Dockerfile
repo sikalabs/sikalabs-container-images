@@ -1,4 +1,5 @@
-FROM sikalabs/ci
+ARG BASE_IMAGE=ghcr.io/sikalabs/ci
+FROM $BASE_IMAGE
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends \
   zsh \
