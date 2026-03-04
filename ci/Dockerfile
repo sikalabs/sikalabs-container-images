@@ -15,9 +15,7 @@ RUN apt-get update && \
   moreutils \
   git \
   gnupg2 \
-  postgresql-client \
-  # required by aws cli
-  less groff && \
+  postgresql-client && \
   rm -rf /var/lib/apt/lists/* && \
   update-ca-certificates
 RUN curl -fsSL https://raw.githubusercontent.com/sikalabs/slu/master/install.sh | sudo sh
@@ -77,10 +75,6 @@ RUN curl -sSL -o /usr/local/bin/git-repo-sync.sh \
 # Final Image
 FROM base
 LABEL org.opencontainers.image.source=https://github.com/sikalabs/sikalabs-container-images
-# Install aws cli v2
-RUN apt-get update && \
-  apt-get install -y --no-install-recommends awscli && \
-  rm -rf /var/lib/apt/lists/*
 # TODO: Install from tar.gz
 RUN curl -fsSL https://raw.githubusercontent.com/infracost/infracost/master/scripts/install.sh | sh
 COPY --from=docker /usr/local/bin/docker /usr/local/bin
