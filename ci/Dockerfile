@@ -68,10 +68,6 @@ RUN slu install-bin skaffold
 FROM base AS crane
 RUN slu install-bin crane
 
-FROM base AS argocd
-RUN curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64 && \
-  chmod +x /usr/local/bin/argocd
-
 FROM base AS gitlab-terraform
 RUN curl -sSL -o /usr/local/bin/gitlab-terraform \
   https://gitlab.com/gitlab-org/terraform-images/-/raw/master/src/bin/gitlab-terraform.sh && \
@@ -104,7 +100,6 @@ COPY --from=terraform /usr/local/bin/terraform /usr/local/bin
 COPY --from=vault /usr/local/bin/vault /usr/local/bin
 COPY --from=doctl /usr/local/bin/doctl /usr/local/bin
 COPY --from=skaffold /usr/local/bin/skaffold /usr/local/bin
-COPY --from=argocd /usr/local/bin/argocd /usr/local/bin
 COPY --from=crane /usr/local/bin/crane /usr/local/bin
 COPY --from=gitlab-terraform /usr/local/bin/gitlab-terraform /usr/local/bin/gitlab-terraform
 COPY --from=git-repo-sync.sh /usr/local/bin/git-repo-sync.sh /usr/local/bin/git-repo-sync.sh
