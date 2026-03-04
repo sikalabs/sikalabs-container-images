@@ -56,10 +56,6 @@ RUN slu install-bin terraform
 FROM base AS vault
 RUN slu install-bin vault
 
-# doctl
-FROM base AS doctl
-RUN slu install-bin doctl
-
 # skaffold
 FROM base AS skaffold
 RUN slu install-bin skaffold
@@ -98,7 +94,6 @@ COPY --from=kubectl /usr/local/bin/kubectl /usr/local/bin
 COPY --from=helm /usr/local/bin/helm /usr/local/bin
 COPY --from=terraform /usr/local/bin/terraform /usr/local/bin
 COPY --from=vault /usr/local/bin/vault /usr/local/bin
-COPY --from=doctl /usr/local/bin/doctl /usr/local/bin
 COPY --from=skaffold /usr/local/bin/skaffold /usr/local/bin
 COPY --from=crane /usr/local/bin/crane /usr/local/bin
 COPY --from=gitlab-terraform /usr/local/bin/gitlab-terraform /usr/local/bin/gitlab-terraform
