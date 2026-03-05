@@ -12,6 +12,7 @@ autoload -Uz compinit
 compinit
 
 . <(slu completion zsh); compdef _slu slu
+. <(slr completion zsh); compdef _slr slr
 
 . <(kubectl completion zsh)
 . <(helm completion zsh)
