@@ -94,3 +94,4 @@ COPY --from=gitlab-terraform /usr/local/bin/gitlab-terraform /usr/local/bin/gitl
 COPY --from=git-repo-sync.sh /usr/local/bin/git-repo-sync.sh /usr/local/bin/git-repo-sync.sh
 RUN slu install-bin editorconfig-checker
 RUN slu install-bin slr
+RUN slu install-bin yq
