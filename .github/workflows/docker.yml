@@ -96,15 +96,6 @@ jobs:
     - name: Build & Push the Docker Images
       run: cd dev-az && make all
 
-  sikalabs--kubectl:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Login to Docker Hub
-      run: docker login -u ondrejsika -p ${{ secrets.DOCKERHUB_ONDREJSIKA_PASSWORD }}
-    - name: Build & Push the Docker Images
-      run: cd kubectl && make all
-
   sikalabs--pause:
     runs-on: ubuntu-latest
     steps:
@@ -143,16 +134,6 @@ jobs:
     - name: Build & Push the Docker Images
       run: cd ca-certificates && make all
 
-  sikalabs--helm:
-    needs: sikalabs--ca-certificates
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Login to Docker Hub
-      run: docker login -u ondrejsika -p ${{ secrets.DOCKERHUB_ONDREJSIKA_PASSWORD }}
-    - name: Build & Push the Docker Images
-      run: cd helm && make all
-
   sikalabs--github-actions-runner:
     runs-on: ubuntu-latest
     steps:
@@ -171,15 +152,6 @@ jobs:
     - name: Build & Push the Docker Images
       run: cd serve && make all
 
-  sikalabs--debian:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Login to Docker Hub
-      run: docker login -u ondrejsika -p ${{ secrets.DOCKERHUB_ONDREJSIKA_PASSWORD }}
-    - name: Build & Push the Docker Images
-      run: cd debian && make all
-
   sikalabs--awx-ee:
     runs-on: ubuntu-latest
     steps:
@@ -188,15 +160,6 @@ jobs:
       run: docker login -u ondrejsika -p ${{ secrets.DOCKERHUB_ONDREJSIKA_PASSWORD }}
     - name: Build & Push the Docker Images
       run: cd awx-ee && make all
-
-  sikalabs--powershell:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Login to Docker Hub
-      run: docker login -u ondrejsika -p ${{ secrets.DOCKERHUB_ONDREJSIKA_PASSWORD }}
-    - name: Build & Push the Docker Images
-      run: cd powershell && make all
 
   sikalabs--bitnami-keycloak-sikalabs-theme:
     runs-on: ubuntu-latest
