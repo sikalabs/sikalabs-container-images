@@ -13,14 +13,11 @@
 
 - [sikalabs/ci](./ci)
 - [sikalabs/dev](./dev)
-- [sikalabs/kubectl](./kubectl)
-- [sikalabs/helm](./helm)
 - [sikalabs/pause](./pause)
 - [sikalabs/nginx-public](./nginx-public)
 - [sikalabs/debug-server](./debug-server)
 - [sikalabs/ca-certificates](./ca-certificates)
 - [sikalabs/kaniko-coreutils](./kaniko-coreutils)
-- [sikalabs/debian-with-argo-rollouts](./debian-with-argo-rollouts)
 
 ## Random Images
 
