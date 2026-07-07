@@ -1,1 +1,0 @@
-# sikalabs/powershell image
