@@ -17,6 +17,7 @@ RUN apt-get install -y --no-install-recommends \
   pv \
   redis-tools \
   postgresql-client \
+  mariadb-client \
   openssh-server \
   pipx
 RUN slu install-bin kaf
