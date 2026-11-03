@@ -25,4 +25,3 @@ COPY ./themes/lightred /opt/keycloak/themes/lightred
 COPY ./themes/lightyellow /opt/keycloak/themes/lightyellow
 COPY ./themes/isseurope /opt/keycloak/themes/isseurope
 COPY ./themes/ica /opt/keycloak/themes/ica
-RUN /opt/keycloak/bin/kc.sh build
