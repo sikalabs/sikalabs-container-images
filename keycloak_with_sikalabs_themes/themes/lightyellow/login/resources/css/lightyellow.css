@@ -1,4 +1,5 @@
 .login-pf body {
+  background-image: none;
   background-color: lightyellow !important;
   background-size: cover;
   background-repeat: no-repeat;
