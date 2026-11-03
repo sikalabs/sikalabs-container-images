@@ -18,6 +18,7 @@
 - [sikalabs/debug-server](./debug-server)
 - [sikalabs/ca-certificates](./ca-certificates)
 - [sikalabs/kaniko-coreutils](./kaniko-coreutils)
+- [sikalabs/keycloak-with-sikalabs-themes](./keycloak_with_sikalabs_themes)
 
 ## Random Images
 
