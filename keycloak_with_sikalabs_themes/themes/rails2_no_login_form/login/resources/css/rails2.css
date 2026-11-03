@@ -1,0 +1,11 @@
+.login-pf body {
+  background-image: url(https://keycloak-theme-images.vercel.app/images/rails.jpg) !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+#kc-form {
+  display: none;
+}

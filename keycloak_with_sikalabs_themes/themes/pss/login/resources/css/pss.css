@@ -1,0 +1,7 @@
+.login-pf body {
+  background-image: url(https://keycloak-theme-images.vercel.app/images/pss.jpg) !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right bottom;
+  background-size: 200px;
+}

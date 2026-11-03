@@ -1,0 +1,8 @@
+.login-pf body {
+    background-image: url(https://keycloak-theme-images.vercel.app/images/ica.svg) !important;
+    background-attachment: fixed;
+    background-color: #161479;
+    background-repeat: no-repeat;
+    background-position: 20px 20px;
+    background-size: unset !important;
+}
