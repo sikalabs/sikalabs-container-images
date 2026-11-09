@@ -32,11 +32,9 @@ RUN slu install-bin docker-compose
 FROM base AS docker_buildx
 RUN slu install-bin docker-buildx
 
-# Minio Client (mc -> mcli)
+# Minio Client (mcli) from pgsty/mc (Silo)
 FROM base AS minio
-RUN wget https://dl.minio.io/client/mc/release/linux-amd64/mc && \
-  mv mc /usr/local/bin/mcli && \
-  chmod +x /usr/local/bin/mcli
+RUN slu install-bin mcli
 
 # kubectl
 FROM base AS kubectl
